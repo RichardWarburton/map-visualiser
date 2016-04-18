@@ -11,32 +11,37 @@ import java.util.HashMap;
  * @author Manoel Campos da Silva Filho
 */
 public class Sample {
-    private Console console;
+    private final Console console;
     
-    private void insertMapData(Map map){
+    public Sample(){
+        this.console = new Console();    
+        printTreeMap();
+        printHashMap();
+    }
+    
+    private void printTreeMap(){
+        TreeMap<String, Object> treeMap1 = new TreeMap<>();
+        insertSampleMapData(treeMap1);
+        System.out.println(treeMap1.getClass().getSimpleName());
+        new TreeMapVisualiser(console).visualise(treeMap1);     
+        System.out.println();           
+    }
+    
+    private void printHashMap(){
+        HashMap<String, Object> hashMap1 = new HashMap<>();
+        insertSampleMapData(hashMap1);
+        System.out.println(hashMap1.getClass().getSimpleName());
+        new HashMapVisualiser(console).visualise(hashMap1);
+        System.out.println();         
+    }
+    
+    private void insertSampleMapData(Map map){
         map.put("name", "Manoel Campos");
         map.put("country", "Brazil");        
         map.put("age", 35);
         map.put("height", 1.8);
         map.put("gender", 'M');
-        map.put("site", "http://manoelcampos.com");        
-    }
-    
-    public Sample(){
-        this.console = new Console();    
-        TreeMap<String, Object> treeMap1 = new TreeMap<>();
-        insertMapData(treeMap1);
-        
-        HashMap<String, Object> hashMap1 = new HashMap<>();
-        insertMapData(hashMap1);
-
-        System.out.println(treeMap1.getClass().getSimpleName());
-        new TreeMapVisualiser(console).visualise(treeMap1);     
-        System.out.println();   
-        
-        System.out.println(hashMap1.getClass().getSimpleName());
-        new HashMapVisualiser(console).visualise(hashMap1);
-        System.out.println();        
+        map.put("site", "http://github.com/manoelcampos");        
     }
     
     public static void main(String args[]){

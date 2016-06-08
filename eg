@@ -1,0 +1,1 @@
+java -cp build/classes/main/:build/classes/test/ com.monotonic.map_visualiser.HashMapEg

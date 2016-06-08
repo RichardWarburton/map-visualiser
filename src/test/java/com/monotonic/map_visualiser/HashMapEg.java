@@ -10,7 +10,9 @@ public class HashMapEg
         Console console = new Console();
         console.clear();
 
-        final HashMap<String, Integer> map = new HashMap<>();
+        final HashMapVisualiser visualiser = new HashMapVisualiser(console);
+
+        /*final HashMap<String, Integer> map = new HashMap<>();
 
         map.put("AaAa", 1);
         map.put("BBBB", 2);
@@ -21,9 +23,8 @@ public class HashMapEg
         map.put("six", 6);
         map.put("seven", 7);
 
-        final HashMapVisualiser visualiser = new HashMapVisualiser(console);
         visualiser.visualise(map);
-        console.await();
+        console.await();*/
 
         final HashMap<BadHash, String> treeified = new HashMap<>();
         for (int i = 0; i < 20; i++)
